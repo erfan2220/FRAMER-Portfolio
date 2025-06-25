@@ -29,22 +29,13 @@ function Contact()
     const ref=useRef()
     const isView=useInView(ref,{margin:"-100px"})
 
+    const [submitted, setSubmitted] = useState(false);
 
 
 
     const formRef =useRef()
     const [error,setError]=useState(false)
     const [success,setSuccess]=useState(false)
-    const sendEmail = (e) =>
-    {
-        e.preventDefault();
-        emailjs.sendForm('service_7oizc78', 'template_3fnll7n', formRef.current, 'nfQQX86bVrKtEnsZT')
-            .then((result) => {
-                setSuccess(true)
-            }, (error) => {
-                setError(true)
-            });
-    };
 
 
 
@@ -61,8 +52,7 @@ function Contact()
                 </motion.div>
                 <motion.div className="item" variants={variants}>
                     <h2 className="text-3xl leading-[60px] lg:leading-[80px]">Address</h2>
-                    <span className="font-thin ">Shahed 4 Alley, Shahed Street, Hesarak, Tehran
-City, Tehran Province, Iran., Tehran, Iran</span>
+                    <span className="font-thin ">Shahed 4 Alley, Shahed Street, Hesarak, Tehran City, Tehran Province, Iran., Tehran, Iran</span>
                 </motion.div>
                 <motion.div className="item flex flex-col " variants={variants}>
                     <h2 className="text-3xl leading-[60px] lg:leading-[80px]">Phone-number</h2>
@@ -91,18 +81,36 @@ City, Tehran Province, Iran., Tehran, Iran</span>
                                 C501.071,340.717,512,299.589,512,256C511.98,114.604,397.389,0.012,255.998,0.002z"/>
                               </svg>
                 </motion.div>
-                <motion.form className="flex flex-col gap-[20px] w-full z-10" ref={formRef}
+                <motion.form
+                    action="https://formspree.io/f/xgvypngk"
+                             method="POST"
+                    className="flex flex-col gap-[20px] w-full z-10"
                       initial={{opacity:0}} whileInView={{opacity:1}}
-                      transition={{delay:4, duration:1}} onSubmit={sendEmail}>
-                    <input className="w-full p-[10px] lg:p-[20px] bg-transparent text-white border-2 border-white rounded-lg" type="text" required placeholder="Name" name="name"/>
-                    <input className="p-[10px] lg:p-[20px] bg-transparent text-white border-2 border-white rounded-lg" type="text" required placeholder="Email" name="email"/>
-                    <textarea className="p-[10px] lg:p-[20px] bg-transparent text-white
-                    border-2 border-white rounded-lg" rows={8} placeholder="Message" name="message"></textarea>
-                    <button className="p-[10px] lg:p-[20px] bg-yellow-600 cursor-pointer">Submit</button>
-                   <div className="text-white">
-                    {error && "error"}
-                    {success && "success"}
-                   </div>
+                      transition={{delay:4, duration:1}}   onSubmit={() => setSubmitted(true)}>
+                    <input className="w-full p-[10px] lg:p-[20px]
+                    bg-transparent text-white border-2
+                    border-white rounded-lg" type="text"
+                           required placeholder="Name" name="name"/>
+
+                    <input className="p-[10px] lg:p-[20px]
+                    bg-transparent text-white border-2 border-white
+                     rounded-lg" type="email" required placeholder="Email"
+                           name="email"/>
+
+                    <textarea className="p-[10px] lg:p-[20px]
+                     bg-transparent text-white  border-2
+                     border-white rounded-lg" rows={8}
+                              placeholder="Message" name="message">
+                    </textarea>
+
+                    <button type="submit" className="p-[10px]
+                    lg:p-[20px] bg-yellow-600 cursor-pointer">
+                        Submit
+                    </button>
+
+                    <div className="text-white min-h-[20px]">
+                        {submitted && <p className="text-green-400">Message sent successfully!</p>}
+                    </div>
                 </motion.form>
             </div>
         </motion.div>

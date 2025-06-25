@@ -59,9 +59,12 @@ function Hero()
                 <motion.div className="flex z-999 flex-col w-full items-center  md:items-start  gap-4 lg:gap-8" variants={textVariants} initial="initial" animate="animate">
                     <motion.h2 className="text-3xl  lg:text-6xl text-purple-700 tracking-[4px]" variants={textVariants}>Erfan Hashemi</motion.h2>
                     <motion.h1 className="text-3xl md:text-6xl lg:leading-[5rem] text-white " variants={textVariants}>Web developer and <br/>UI designer</motion.h1>
-                    <motion.div className="flex  flex-row gap-4" variants={textVariants}>
-                        <motion.button className="text-[14px] border-2 border-white rounded px-4 py-3
-                        cursor-pointer text-white" variants={textVariants}>Download Cv</motion.button>
+                    <motion.div className="flex  flex-row gap-4 cursor-pointer" variants={textVariants}>
+                        <a href="./cv.pdf" download>
+                            <motion.button className="text-[14px] border-2 border-white rounded px-4 py-3
+                            cursor-pointer text-white" variants={textVariants}>Download Cv</motion.button>
+                        </a>
+
                         <a href="#Contact"><motion.button className="text-[14px] border-2 border-white rounded px-4 py-3 cursor-pointer bg-white text-[#0c0c1d]"
                                        variants={textVariants}>Contact me</motion.button></a>
                     </motion.div>
@@ -77,7 +80,7 @@ function Hero()
             </motion.div>
             <div className=" h-1/2 w-full bottom-0
             absolute lg:h-full  lg:top-0 lg:right-0 lg:w-1/2">
-                <img src="/src/assets/images/hero.png" alt="hero" className="object-contain w-full h-full "/>
+                <img src="/src/assets/images/background.svg" alt="hero" width={1000} height={1000} className="object-contain w-full h-full "/>
             </div>
         </div>
     );

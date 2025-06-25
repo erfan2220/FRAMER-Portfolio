@@ -17,16 +17,20 @@ function App()
                 <Navbar/>
                 <Hero/>
             </section>
-            <section id="Services">
+            <section >
                 <Parallax type="Services"/>
             </section>
-            <section className="bg-gradient-to-b from-[#0c0c1d] to-[#111132]">
+            <section id="Services" className="bg-gradient-to-b from-[#0c0c1d] to-[#111132]">
                 <Services/>
             </section>
-            <section id="Portfolio" >
-                <Parallax type="Portfolio"/>
+            <section >
+                <Parallax  type="Portfolio"/>
             </section>
-            <Portfolio/>
+
+                <Portfolio id="Portfolio"/>
+
+
+
             <section className="bg-[#0c0c1d] " id="Contact">
                 <Contact/>
             </section>

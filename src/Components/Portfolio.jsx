@@ -14,54 +14,50 @@ const Portfolio = () =>
         offset:["end end" ,"start start"],
         });
 
-        const items=[
+        const items = [
             {
-                id:1,
-                title:'Asset Management System',
-                des:'Built a unified system for managing company assets,\n' +
-                    'integrating OpenStreetMap for precise asset mapping.\n' +
-                    'Implemented network topology mapping for detailed\n' +
-                    'visualization.\n' +
-                    'Improved decision-making through dynamic charts using\n' +
-                    'Chart.js and Recharts.js',
-                img:asset,
+                id: 1,
+                title: 'Asset Management System',
+                des: 'Developed a unified system for asset tracking at MCI using React and OpenStreetMap. Integrated network topology views and real-time charts with Chart.js and Recharts.',
+                img: asset,
+                link: 'https://github.com/erfan2220/Asset-Management/wiki'
             },
             {
                 id: 2,
                 title: 'Single Sign-On (SSO) System',
-                des: 'Created an SSO system for centralized user authentication\n' +
-                    'using Keycloak.\n' +
-                    'Ensured secure token validation and refresh mechanisms every\n' +
-                    'hour.\n' +
-                    'Developed a user panel displaying personalized applications\n' +
-                    'based on user roles and permissions.',
-                img: SingleSignOn ,
+                des: 'Created an authentication system with Keycloak for secure login and role-based app access. Enabled token validation, user panel, and app launcher interface.',
+                img: SingleSignOn,
+                link: 'https://github.com/erfan2220/SSO-single-sign-on-/wiki'
             },
             {
-                id:3,
-                title:'EvalueX',
-                des:'Developed a system for updating KPI data and notifying users\n' +
-                    'about upcoming deadlines.\n' +
-                    'Designed a management dashboard for administrative\n' +
-                    'oversight.\n' +
-                    'Enabled file attachments and three types of comments\n' +
-                    '(general, system-generated, and administrative notes) for\n' +
-                    'enhanced collaboration.',
+                id: 3,
+                title: 'EvalueX (KPI Tracker)',
+                des: 'Built a KPI tracking tool to monitor performance deadlines and notify users. Integrated file uploads and comment threads (admin, general, system). Dashboards for oversight.',
                 img: SingleSignOn,
+                link: 'https://github.com/erfan2220/Evaluex/wiki'
             },
             {
-                id:4,
-                title:'ConfigX Management System',
-                des:'Designed a dynamic system with React Router and Lazy\n' +
-                    'Loading for enhanced performance.\n' +
-                    'Visualized traffic data with PieCharts and BarCharts.\n' +
-                    'Integrated Iranian maps for site and traffic visualization.',
+                id: 4,
+                title: 'ConfigX Management System',
+                des: 'Designed dynamic UI using React Router and Lazy Loading. Visualized traffic and infrastructure data with charts and custom Iran map integration.',
                 img: SingleSignOn,
+                link: 'https://github.com/erfan2220/react-admin'
+            },
+            {
+                id: 5,
+                title: 'Personal Portfolio',
+                des: 'Animated portfolio using React, Framer Motion, and Tailwind. Features parallax effects, scroll-based transitions, and responsive layout.',
+                img: asset,
+                link: 'https://github.com/erfan2220/Portfolio'
+            },
+            {
+                id: 6,
+                title: 'Child Philosophy Organization Website',
+                des: 'Built NGO website using WordPress, Elementor, and Yoast SEO for improved ranking. Focused on content presentation and page speed.',
+                img: SingleSignOn,
+                link: 'http://p4ciran.com/'
             }
-
-
         ];
-
 
         const Single =({item})=>
         {
@@ -82,7 +78,15 @@ const Portfolio = () =>
                                     <motion.div  className="text-container flex lg:flex-[1_1_0%] items-center  flex-col gap-[50px] "  style={!isMobile && {y}} >
                                             <h2 className="text-3xl lg:text-6xl">{item.title}</h2>
                                             <p className="text-gray-200   text-center text-2xl">{item.des}</p>
-                                            <button className="w-[200px] p-[10px] text-black self-center cursor-pointer bg-yellow-600 rounded-full">See Demo</button>
+                                        <a
+                                            href={item.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <button className="w-[200px] p-[10px] text-black self-center cursor-pointer bg-yellow-600 rounded-full">
+                                                {item.link.includes('github.com') ? 'View on GitHub' : 'View Live'}
+                                            </button>
+                                        </a>
                                     </motion.div>
                                 </div>
                           </div>
