@@ -80,7 +80,7 @@ function Hero()
             </motion.div>
             <div className=" h-1/2 w-full bottom-0
             absolute lg:h-full  lg:top-0 lg:right-0 lg:w-1/2">
-                <img src="/src/assets/images/background.svg" alt="hero" width={1000} height={1000} className="object-contain w-full h-full "/>
+                <img src="../assets/images/background.svg" alt="hero" width={1000} height={1000} className="object-contain w-full h-full "/>
             </div>
         </div>
     );
