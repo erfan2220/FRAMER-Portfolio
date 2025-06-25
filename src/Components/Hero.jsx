@@ -1,5 +1,8 @@
 import React from 'react';
 import {motion} from "framer-motion";
+import background from "../assets/images/background.svg"
+import Scroll from "../assets/images/scroll.png"
+
 
 function Hero()
 {
@@ -68,7 +71,7 @@ function Hero()
                         <a href="#Contact"><motion.button className="text-[14px] border-2 border-white rounded px-4 py-3 cursor-pointer bg-white text-[#0c0c1d]"
                                        variants={textVariants}>Contact me</motion.button></a>
                     </motion.div>
-                        <motion.img src="/src/assets/images/scroll.png" alt="scroll" className="w-[50px] "
+                        <motion.img src={Scroll} alt="scroll" className="w-[50px] "
                                     variants={textVariants} animate="scrollButton"/>
                 </motion.div>
             </div>
@@ -80,7 +83,7 @@ function Hero()
             </motion.div>
             <div className=" h-1/2 w-full bottom-0
             absolute lg:h-full  lg:top-0 lg:right-0 lg:w-1/2">
-                <img src="../assets/images/background.svg" alt="hero" width={1000} height={1000} className="object-contain w-full h-full "/>
+                <img src={background} alt="hero" width={1000} height={1000} className="object-contain w-full h-full "/>
             </div>
         </div>
     );
