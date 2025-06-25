@@ -1,5 +1,6 @@
 import React, {useRef} from 'react';
 import { motion , useInView } from "framer-motion";
+import people from "../assets/images/people.webp"
 
 
 
@@ -82,7 +83,7 @@ const Services = () =>
 
                         <motion.div className="title flex flex-col lg:flex-row justify-center items-center  gap-5">
                             <motion.img className="w-[150px] h-[50px] lg:w-[300px] lg:h-[100px] object-cover rounded-full gap-2"
-                                        src="/src/assets/images/people.webp" alt="Parallex"/>
+                                        src={people} alt="Parallex"/>
                             <h1 className="text-[20px] lg:text-[40px] font-thin">
                                 <motion.b whileHover={{color:"orange"}}>Unique</motion.b> Ideas
                             </h1>
